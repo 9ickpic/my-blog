@@ -16,8 +16,9 @@ const atkinsonHyperlegible = Atkinson_Hyperlegible({
 });
 
 export const metadata: Metadata = {
-  title: 'Мой блог',
-  description: 'Портфолио веб-разработчика с блогом',
+  title: 'Главная | Мой блог',
+  description:
+    'Портфолио Ярослава — веб-разработчика из Хабаровска. Проекты, блог и идеи.',
 };
 
 export default function RootLayout({
@@ -31,10 +32,10 @@ export default function RootLayout({
       {/* Метаданные и другие теги <head> управляются через объект metadata */}
       {/* <link> теги для шрифтов из Google Fonts здесь НЕ НУЖНЫ, т.к. используется next/font */}
       <body
-        className={`${spaceGrotesk.variable} ${atkinsonHyperlegible.variable} antialiased`}
+        className={`${spaceGrotesk.variable} ${atkinsonHyperlegible.variable} antialiased flex flex-col min-h-screen`}
       >
         <Header></Header>
-        {children}
+        <main className="flex-grow container mx-auto">{children}</main>
         <Footer></Footer>
       </body>
     </html>

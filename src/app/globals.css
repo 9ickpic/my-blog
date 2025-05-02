@@ -1,3 +1,5 @@
+@import url('slick-carousel/slick/slick.css');
+@import url('slick-carousel/slick/slick-theme.css');
 @import 'tailwindcss';
 
 :root {
@@ -41,4 +43,37 @@ p {
 button:hover,
 a:hover {
   color: var(--secondary);
+}
+
+.hover-none:hover {
+  color: var(--primary);
+}
+
+/* Customize slick arrows */
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background: var(--bg); /* Tailwind gray-800 */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  background: var(--bg); /* Tailwind gray-700 */
+}
+
+.slick-prev slick-disabled,
+.slick-next slick-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  display: none; /* Hide default arrows */
 }

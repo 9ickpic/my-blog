@@ -2,7 +2,6 @@
 import { AlignRight, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import styles from './Header.module.scss';
 
 const navItems = [
   { name: 'Главная', href: '/' },
@@ -19,21 +18,12 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={`${styles.header} text-primary`}>
+    <header className="text-primary py-4">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Логотип */}
         <Link href="/" className="text-2xl font-bold duration-200">
-          Портфолио
+          9ickpic
         </Link>
-
-        {/* Навигация для десктопа */}
-        <nav className="hidden md:flex space-x-6">
-          {navItems.map((item) => (
-            <Link key={item.href} href={item.href} className="duration-200">
-              {item.name}
-            </Link>
-          ))}
-        </nav>
 
         {/* Бургер-кнопка для мобильных */}
         <button
